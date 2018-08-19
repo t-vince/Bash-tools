@@ -15,7 +15,7 @@ To decrypt the large file, we then need our RSA secret to decrypt the encryption
 Because the encryption key is always randomly generated, it should be safe to assume no one can guess this key and thus the file is securely encrypted.
 
 ## Ready-to-use one-liner to decrypt/encrypt
-You can run the script like ./encrypt -k <nameOfKeyfile> -i <nameOfEncryptedDBFile> [-d ]
+You can run the script like ./encrypt.sh -k <nameOfKeyfile> -i <nameOfEncryptedDBFile> [-d ]
 
 (The "-d" parameter denotes whether its encryption or decryption)
 
@@ -37,11 +37,11 @@ Store the private key somewhere safe, e.g. a password manager
 You can later generate the public key from the private key, but not the other way around.
 
 ### Encryption
-Generate a random key
-Encrypt this random key using our public key from our keypair
-Also use the random key to encrypt the large file using AES
-Remove unencrypted random key
-Gzip file and encrypted key
+* Generate a random key
+* Encrypt this random key using our public key from our keypair
+* Also use the random key to encrypt the large file using AES
+* Remove unencrypted random key
+* Gzip file and encrypted key
 
 ```shell
 openssl rand -base64 32 > randomkey.txt
@@ -63,5 +63,5 @@ rm -rf unpacked
 ```
 
 ### More info
-http://www.czeskis.com/random/openssl-encrypt-file.html
-https://docs.oracle.com/en/cloud/paas/database-dbaas-cloud/csdbi/generate-ssh-key-pair.html#GUID-4285B8CF-A228-4B89-9552-FE6446B5A673
+* http://www.czeskis.com/random/openssl-encrypt-file.html
+* https://docs.oracle.com/en/cloud/paas/database-dbaas-cloud/csdbi/generate-ssh-key-pair.html#GUID-4285B8CF-A228-4B89-9552-FE6446B5A673
