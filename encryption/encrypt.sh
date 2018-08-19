@@ -12,8 +12,8 @@
 # Run like:
 # ./encrypt.sh [-?] [-i <input_file> -k <keyfile> [-o <output_file>] [-d] [-K]]"
 #
-# To [ Decrypt ] run the script with decryption parameter, (RSA key in lastpass) e.g.:
-# ./encrypt.sh -k private_RSA_key -i shared--2017-05-10_16-23.sql.gz.tar.gz -d
+# To [ Decrypt ] run the script with decryption parameter, e.g.:
+# ./encrypt.sh -k private_RSA_key -i some-database--2017-05-10_16-23.sql.gz.tar.gz -d
 #
 # To [ Encrypt ] eg:
 # ./encrypt.sh -k generatedpublickey.pem -i dbdump.sql"
